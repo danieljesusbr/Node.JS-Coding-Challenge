@@ -1,8 +1,8 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var watch = require('gulp-watch');
-var sourcemaps = require('gulp-sourcemaps');
+const gulp = require('gulp');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const watch = require('gulp-watch');
+const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('scripts', function () {
   gulp.src(['./app_client/**/*.js', '!./app_client/**/*.test.js', '!./app_client/app.min.js'])
@@ -11,7 +11,7 @@ gulp.task('scripts', function () {
     .pipe(uglify({mangle: true}))
     .pipe(gulp.dest('app_client'))
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('app_client'));
+    .pipe(gulp.dest('app_client'))
 });
 
 gulp.task('watch', function () {
@@ -20,4 +20,4 @@ gulp.task('watch', function () {
   });
 });
 
-gulp.task('default', ['scripts', 'watch']);
+gulp.task('default', gulp.series(gulp.parallel('scripts', 'watch')));

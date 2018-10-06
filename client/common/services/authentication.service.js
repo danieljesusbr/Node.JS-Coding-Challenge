@@ -57,10 +57,7 @@
 
     logout = function() {
       if( isLoggedIn() ) {
-        return $http.post('/api/logout', currentUser()).success(function () {
-          $window.localStorage.removeItem('mean-token');
-        });
-      } else {
+        $window.localStorage.removeItem('mean-token');
         return false;
       }
     };

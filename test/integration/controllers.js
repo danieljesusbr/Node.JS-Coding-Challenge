@@ -1,13 +1,15 @@
 'use strict';
 
-let assert = require('chai').assert;
-let request = require('supertest-as-promised');
-
-let app = require('../../app');
-let _user = 'integration_test_' + Math.floor(Date.now() / 1000) + '@alttab.co';
+const assert = require('chai').assert;
+const request = require('supertest-as-promised');
+const User = require('./../../server/models/user.model');
+const app = require('../../app');
+const _user = 'integration_test_' + Math.floor(Date.now() / 1000) + '@alttab.co';
 
 describe('Authentication Controller', () => {
-
+  before(async () => {
+     await User.deleteMany().exec();
+  });
   it('should register a new user and return token', () => {
     let _token = null;
 
@@ -40,7 +42,7 @@ describe('Authentication Controller', () => {
       });
   });
 
-  it('should return an error bad request if email is used', () => {
+  it('should return an error bad request if same email is used', () => {
     return request(app)
       .post('/api/register')
       .send({
