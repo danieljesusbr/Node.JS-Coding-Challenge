@@ -21,4 +21,4 @@
 
 ### Você poderá:
 * Usar qualquer biblioteca disponível no NPM.
-* Usar Express se tiver dificuldade com Fastify (mas preferímos Fastify!).
+* Usar Express se tiver dificuldade com Fastify (mas preferimos Fastify!).
