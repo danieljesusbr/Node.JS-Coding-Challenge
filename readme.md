@@ -1,23 +1,24 @@
-## AltTab coding challenge
+## NodeJS Coding Challenge
 
-### You would need:
+### Você precisará de:
 * Node.js
 * MongoDB
 
-### Client APP is using:
+### A Aplicação cliente neste repositório usa:
 * Angular JS
 * Gulp
 
-## Your task:
-* Write an API with Express FW
-* Use the API to authenticate users and store them in MongoDB
+## Sua tarefa é:
+* Escrever uma API com a framework Fastify.
+* Usar a API para autenticar usuários e gravá-los no MongoDB
 
-* Your API should allow users:
-   * To register
-   * To Login
-   * To Logout
+* Sua API deve permitir que seus usuários:
+   * Registrem-se
+   * Façam login
+   * Façam logout
 
-* Your API should pass all integration tests.
+* Sua API deve passar todos os testes de integração daqui.
 
-### You could:
-* Use any npm library you like
+### Você poderá:
+* Usar qualquer biblioteca disponível no NPM.
+* Usar Express se tiver dificuldade com Fastify (mas preferímos Fastify!).
